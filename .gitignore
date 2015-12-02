@@ -1,2 +1,4 @@
 usr/*
 etc/*
+var/*
+fs_*
