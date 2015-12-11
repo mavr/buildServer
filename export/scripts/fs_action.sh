@@ -44,3 +44,16 @@ function fs_clone() {
 
 	exit 0
 }
+
+function fs_rename() {
+	umount ${FSPATH}/${1}/usr/portage 2> /dev/null
+	umount ${FSPATH}/${1}/dev/shm 2> /dev/null
+	umount ${FSPATH}/${1}/dev/pts 2> /dev/null
+	umount ${FSPATH}/${1}/dev 2> /dev/null
+	umount ${FSPATH}/${1}/sys 2> /dev/null
+	umount ${FSPATH}/${1}/proc 2> /dev/null
+
+	mv ${FSPATH}/${1} ${FSPATH}/${2}
+
+	exit 0
+}
